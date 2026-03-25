@@ -1,0 +1,9 @@
+detoxify
+nudenet
+Pillow
+requests
+python-dotenv
+google-generativeai
+rq
+redis
+pymongo
