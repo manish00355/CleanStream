@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
 
-//   moderation_jobs collection
+// moderation_jobs collection
+// Tracks BullMQ job lifecycle for debugging and retry visibility.
 const moderationJobSchema = new mongoose.Schema(
   {
+    // UUID — matches BullMQ job id
     job_id: {
       type:     String,
       required: true,
@@ -24,7 +26,7 @@ const moderationJobSchema = new mongoose.Schema(
     enqueued_at:  { type: Date,   default: Date.now },
     completed_at: { type: Date,   default: null },
     retry_count:  { type: Number, default: 0 },
-    error:        { type: String, default: null },
+    error:        { type: String, default: null }, 
   },
   { timestamps: false }
 );
