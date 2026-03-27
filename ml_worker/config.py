@@ -5,7 +5,7 @@ load_dotenv()
 
 # ── Gemini ────────────────────────────────────────────────────────────────────
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
-GEMINI_MODEL   = os.getenv("GEMINI_MODEL")   # fast + cheap, good enough for moderation
+GEMINI_MODEL   = "gemini-3.1-flash-lite-preview"   # fast + cheap, good enough for moderation
 
 # ── Thresholds ────────────────────────────────────────────────────────────────
 # Detoxify: if score < LOW  → pass immediately (don't call Gemini)
