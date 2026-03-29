@@ -31,7 +31,7 @@ const moderationJobSchema = new mongoose.Schema(
   { timestamps: false }
 );
 
-moderationJobSchema.index({ post_id:      1 });
+// moderationJobSchema.index({ post_id:      1 });
 moderationJobSchema.index({ queue_status: 1 });
 
 module.exports = mongoose.model("ModerationJob", moderationJobSchema);
