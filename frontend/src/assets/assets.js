@@ -37,65 +37,26 @@ export const assets = {
     profile_icon
 }
 
-export const stepsData = [
-    {
-      title: 'Describe Your Vision',
-      description: 'Type a phrase, sentence, or paragraph that describes the image you want to create.',
-      icon: step_icon_1,
-    },
-    {
-      title: 'Watch the Magic',
-      description: 'Our AI-powered engine will transform your text into a high-quality, unique image in seconds.',
-      icon: step_icon_2,
-    },
-    {
-      title: 'Download & Share',
-      description: 'Instantly download your creation or share it with the world directly from our platform.',
-      icon: step_icon_3,
-    },
-  ];
-
-export const testimonialsData = [
-    {
-        image:profile_img_1,
-        name:'Donald Jackman',
-        role:'Graphic Designer',
-        stars:5,
-        text:`I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
-    },
-    {
-        image:profile_img_2,
-        name:'Richard Nelson',
-        role:'Content Creator',
-        stars:4,
-        text:`I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
-    },
-    {
-        image:profile_img_1,
-        name:'Donald Jackman',
-        role:' Graphic Designer',
-        stars:5,
-        text:`I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
-    },
-]
-
-export const plans = [
-    {
-      id: 'Basic',
-      price: 10,
-      credits: 100,
-      desc: 'Best for personal use.'
-    },
-    {
-      id: 'Advanced',
-      price: 50,
-      credits: 500,
-      desc: 'Best for business use.'
-    },
-    {
-      id: 'Business',
-      price: 250,
-      credits: 5000,
-      desc: 'Best for enterprise use.'
-    },
-  ]
+export const postsData = [
+  {
+    _id: 1,
+    text: "Hello world!",
+    image_url: `https://www.codelikethewind.org/content/images/size/w2000/2022/05/hello_world.png`,
+    status: "approved",
+    author: { name: "Shiv" }
+  },
+  {
+    _id: 2,
+    text: "Second post",
+    image_url: "https://preview.redd.it/what-are-your-thoughts-on-itachi-uchiha-v0-d1v84pkpcsdb1.jpg?auto=webp&s=d666c9922aa2215836db1860e522038b0e161dde",
+    status: "approved",
+    author: { name: "Rahul" }
+  },
+  {
+    _id: 3,
+    text: "Rejected content",
+    image_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd5JKf87_Z-ZuRrvQOhciioFANMN4vV7Qghw&s',
+    status: "rejected",
+    author: { name: "Amit" }
+  }
+];
