@@ -1,0 +1,8 @@
+detoxify
+nudenet
+Pillow
+requests
+python-dotenv
+google-generativeai
+bullmq
+httpx
