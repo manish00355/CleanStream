@@ -1,75 +1,39 @@
-import { useContext } from "react";
-import UserFeed from "./pages/UserFeed";
-import Navbar from "./components/Navbar";
-import { ToastContainer } from "react-toastify";
-import { Route, Routes, Navigate } from "react-router-dom";
-import { AppContext } from "./context/AppContext";
-import Login from "./components/Login";
-import Sidebar from "./components/Sidebar";
-import CreatePost from "./pages/CreatePost";
-import Approved from "./pages/Approved";
-import Rejected from "./pages/Rejected";
-import MyPosts from "./pages/MyPosts";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import FeedPage from "./pages/user/FeedPage";
+import CreatePostPage from "./pages/user/CreatePostPage";
+import MyPostsPage from "./pages/user/MyPostsPage";
+import DashboardPage from "./pages/moderator/DashboardPage";
+import FlaggedPage from "./pages/moderator/FlaggedPage";
+import ProtectedRoute from "./routes/ProtectedRoute";
+import ModeratorRoute from "./routes/ModeratorRoute";
 
-function App() {
-  const { showLogin, user } = useContext(AppContext);
-
-  const role = user?.role;
-
-  const AdminRoute = ({ children }) => {
-    return role === "admin" ? children : <Navigate to="/feed" />;
-  };
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-teal-50 to-orange-50">
+    <BrowserRouter>
+      <Routes>
+        {/* Public */}
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
 
-      {/* Sidebar (Fixed) */}
-      <div className="fixed top-0 left-0 w-64 h-screen bg-white shadow z-40">
-        <Sidebar user={user} />
-      </div>
+        {/* User — requires login */}
+        <Route element={<ProtectedRoute />}>
+          <Route path="/feed" element={<FeedPage />} />
+          <Route path="/create" element={<CreatePostPage />} />
+          <Route path="/my-posts" element={<MyPostsPage />} />
+        </Route>
 
-      {/* Right Side */}
-      <div className="ml-64">
+        {/* Moderator — requires login + moderator role */}
+        <Route element={<ModeratorRoute />}>
+          <Route path="/mod/dashboard" element={<DashboardPage />} />
+          <Route path="/mod/flagged" element={<FlaggedPage />} />
+        </Route>
 
-        {/* Navbar (Fixed) */}
-        <div className="fixed top-0 left-64 right-0 h-16 bg-white shadow z-50 flex items-center">
-          <Navbar user={user} />
-        </div>
-
-        {/* Page Content */}
-        <div className="mt-16 p-4 sm:p-6 md:p-8">
-          <ToastContainer position="bottom-right" />
-
-          {showLogin && <Login />}
-
-          <Routes>
-            <Route path="/feed" element={<UserFeed />} />
-            <Route path="/post" element={<CreatePost />} />
-            <Route path="/myposts" element={<MyPosts />} />
-
-            <Route
-              path="/approved"
-              element={
-                <AdminRoute>
-                  <Approved />
-                </AdminRoute>
-              }
-            />
-            <Route
-              path="/rejected"
-              element={
-                <AdminRoute>
-                  <Rejected />
-                </AdminRoute>
-              }
-            />
-
-            <Route path="*" element={<Navigate to="/feed" />} />
-          </Routes>
-        </div>
-      </div>
-    </div>
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
