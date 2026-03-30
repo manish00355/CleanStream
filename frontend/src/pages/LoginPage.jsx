@@ -46,10 +46,10 @@ export default function LoginPage() {
           </h2>
           <div className="space-y-3">
             {[
-              "Multi-layer ML toxicity detection",
-              "NSFW image classification",
-              "Async queue processing with BullMQ",
-              "Human moderator review dashboard",
+               "Secure and moderated social interactions",
+              "Intelligent systems ensuring safe content flow",
+             " Seamless posting and engagement features",
+            " Focused on trust, safety, and user experience"
             ].map((item) => (
               <div key={item} className="flex items-center gap-3 text-gray-500 text-sm">
                 <div className="w-1 h-1 rounded-full bg-brand-400 flex-shrink-0" />
@@ -58,7 +58,7 @@ export default function LoginPage() {
             ))}
           </div>
         </div>
-        <p className="text-gray-700 text-xs">BERLIN · HBTU Campus Drive · Ampcus Cyber</p>
+        <p className="text-gray-700 text-xs">“Connect freely, share safely.”</p>
       </div>
 
       {/* Right panel */}

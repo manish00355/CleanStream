@@ -118,7 +118,7 @@ export default function CreatePostPage() {
           <div className="flex items-center justify-between pt-2">
             <div className="flex items-center gap-2 text-xs text-gray-700">
               <div className="w-1.5 h-1.5 rounded-full bg-brand-400" />
-              AI moderation runs async — you'll get 202 instantly
+              AI review in progress
             </div>
             <button
               type="submit"
@@ -130,15 +130,33 @@ export default function CreatePostPage() {
           </div>
         </form>
 
-        <div className="mt-6 bg-surface-2 border border-border rounded-2xl p-4">
-          <p className="text-xs font-display font-500 text-gray-500 mb-2">What happens next</p>
-          <div className="space-y-1.5 text-xs text-gray-700 leading-relaxed">
-            <div>1. Post saved as <span className="text-amber-500">pending</span></div>
-            <div>2. ML worker checks text + image via AI models</div>
-            <div>3. Clean posts → <span className="text-green-500">approved</span> and appear in feed</div>
-            <div>4. Flagged posts → moderator review</div>
-          </div>
-        </div>
+       <div className="mt-6 bg-surface-2 border border-border rounded-2xl p-5">
+  <p className="text-xs font-display font-medium text-gray-500 mb-3">
+    How your post is handled
+  </p>
+
+  <div className="space-y-2 text-sm text-gray-700 leading-relaxed">
+    <div className="flex items-center gap-2">
+      <span className="h-2 w-2 bg-amber-400 rounded-full"></span>
+      Your post is safely submitted for review
+    </div>
+
+    <div className="flex items-center gap-2">
+      <span className="h-2 w-2 bg-blue-400 rounded-full"></span>
+      It’s checked automatically for safety and quality
+    </div>
+
+    <div className="flex items-center gap-2">
+      <span className="h-2 w-2 bg-green-500 rounded-full"></span>
+      Approved posts appear instantly in the feed
+    </div>
+
+    <div className="flex items-center gap-2">
+      <span className="h-2 w-2 bg-red-400 rounded-full"></span>
+      Flagged content is reviewed by moderators
+    </div>
+  </div>
+</div>
       </div>
     </div>
   );

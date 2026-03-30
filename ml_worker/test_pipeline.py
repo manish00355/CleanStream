@@ -7,7 +7,7 @@ import uuid
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from schemas import ModerationJobInput
-from tasks.moderate import run_moderation
+from task.moderate import run_moderation
 
 
 # ─── Color helpers for terminal output ───────────────────────────────────────

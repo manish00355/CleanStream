@@ -6,7 +6,7 @@ from bullmq import Worker, Job
 
 from config import REDIS_URL, QUEUE_NAME
 from schemas import ModerationJobInput
-from tasks.moderate import run_moderation
+from task.moderate import run_moderation
 
 BACKEND_CALLBACK_URL = "http://localhost:5000/api/moderation/ml-callback"
 

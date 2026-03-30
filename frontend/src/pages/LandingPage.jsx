@@ -44,10 +44,7 @@ export default function LandingPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-brand-400/8 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="relative max-w-2xl mx-auto">
-          <div className="anim-up inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand-400/30 bg-brand-400/10 text-brand-100 text-xs font-display mb-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-400 inline-block" />
-            BERLIN · HBTU Campus Drive · Ampcus Cyber
-          </div>
+         
 
           <h1 className="anim-up font-display font-800 text-5xl md:text-6xl text-white leading-[1.05] tracking-tight mb-6">
             AI-powered<br />
@@ -91,7 +88,7 @@ export default function LandingPage() {
           <div className="w-1.5 h-1.5 rounded-full bg-brand-400" />
           <span className="font-display text-sm text-gray-600">CleanStream</span>
         </div>
-        <span className="text-gray-700 text-xs">HBTU Campus Drive · Ampcus Cyber</span>
+        <span className="text-gray-700 text-xs">Team 02 [Berlin]</span>
       </footer>
     </div>
   );
