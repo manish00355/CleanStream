@@ -25,7 +25,6 @@ const moderationResultSchema = new mongoose.Schema(
       required: true,
     },
 
-        // Reasons for flagging — e.g. ["toxic_text", "nsfw_image", "misinformation"]
     flag_reasons: { type: [String], default: [] },
 
     // Full Perspective API scores

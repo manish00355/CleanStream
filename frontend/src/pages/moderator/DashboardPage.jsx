@@ -57,22 +57,25 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          <div className="bg-surface-2 border border-border rounded-2xl p-5">
-            <h2 className="font-display font-600 text-sm text-white mb-4">ML pipeline</h2>
-            <div className="space-y-3 text-xs text-gray-600 leading-relaxed">
-              {[
-                { label: "Text toxicity", model: "Detoxify → Gemini" },
-                { label: "Image NSFW", model: "NudeNet → Gemini Vision" },
-                { label: "Misinformation", model: "Gemini fact-check" },
-                { label: "Queue", model: "BullMQ + Redis" },
-              ].map(({ label, model }) => (
-                <div key={label} className="flex items-center justify-between py-2 border-b border-border last:border-0">
-                  <span className="text-gray-500">{label}</span>
-                  <span className="text-gray-700 font-display">{model}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className="bg-surface-2 border border-border rounded-2xl p-5">
+  <h2 className="font-display font-semibold text-sm text-white mb-4">
+    Your safety, our priority
+  </h2>
+
+  <div className="space-y-3 text-sm text-gray-400 leading-relaxed">
+    {[
+      { label: "Safe posting", desc: "Your content is reviewed to keep the platform respectful" },
+      { label: "Real-time protection", desc: "Harmful content is filtered before it spreads" },
+      { label: "Smart moderation", desc: "Automated systems ensure a smooth experience" },
+      { label: "Human review", desc: "Sensitive cases are handled carefully by moderators" },
+    ].map(({ label, desc }) => (
+      <div key={label} className="flex flex-col py-2 border-b border-border last:border-0">
+        <span className="text-white text-sm font-medium">{label}</span>
+        <span className="text-xs text-gray-500">{desc}</span>
+      </div>
+    ))}
+  </div>
+</div>
         </div>
       </div>
     </div>

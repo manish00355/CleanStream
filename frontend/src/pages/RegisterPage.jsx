@@ -57,7 +57,7 @@ export default function RegisterPage() {
             ))}
           </div>
         </div>
-        <p className="text-gray-700 text-xs">BERLIN · HBTU Campus Drive · Ampcus Cyber</p>
+        <p className="text-gray-700 text-xs">Share your voice in a space built on trust.</p>
       </div>
 
       {/* Right panel */}

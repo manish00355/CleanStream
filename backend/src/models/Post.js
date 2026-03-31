@@ -9,7 +9,7 @@ const postSchema = new mongoose.Schema(
       required: true,
     },
 
-    // Post content — text and/or image (at least one required, enforced in controller)
+    
     text: {
       type:      String,
       default:   null,
@@ -17,14 +17,14 @@ const postSchema = new mongoose.Schema(
       trim:      true,
     },
 
-    // Full Cloudinary CDN URL stored here
+  
    
     image_url: {
       type:    String,
       default: null,
     },
 
-    // Cloudinary public_id needed to DELETE the image when post is removed
+   
   
     cloudinary_public_id: {
       type:    String,
@@ -38,7 +38,7 @@ const postSchema = new mongoose.Schema(
       default: "pending",
     },
 
-    //  ["toxic_text", "nsfw_image", "misinformation"]
+   
     flag_reasons: {
       type:    [String],
       default: [],
@@ -57,8 +57,8 @@ const postSchema = new mongoose.Schema(
 );
 
 // Indexes for efficient querying
-postSchema.index({ user_id:    1 });           // GET /posts/my
-postSchema.index({ status:     1 });           // moderator dashboard
-postSchema.index({ created_at: -1 });          // feed pagination
+postSchema.index({ user_id:    1 });          
+postSchema.index({ status:     1 });           
+postSchema.index({ created_at: -1 });         
 
 module.exports = mongoose.model("Post", postSchema);
