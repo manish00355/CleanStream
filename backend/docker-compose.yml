@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
 
-  # ── Your Node.js backend ────
+  
   app:
     build: .
     container_name: cleanstream-app
@@ -12,7 +12,7 @@ services:
     env_file:
       - .env
     environment:
-      # These override so containernized app can connect to MongoDB and Redis services by their service names
+    
       MONGO_URI: mongodb://mongo:27017/cleanstream
       REDIS_URL: redis://redis:6379
     depends_on:
@@ -29,9 +29,9 @@ services:
     container_name: cleanstream-mongo
     restart: unless-stopped
     ports:
-      - "27017:27017"            # also exposed so you can use MongoDB Compass
+      - "27017:27017"            #
     volumes:
-      - mongo_data:/data/db      # data survives container restarts
+      - mongo_data:/data/db      
     healthcheck:
       test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
       interval: 10s
@@ -44,7 +44,7 @@ services:
     container_name: cleanstream-redis
     restart: unless-stopped
     ports:
-      - "6379:6379"              # also exposed so you can use redis-cli locally
+      - "6379:6379"              
     volumes:
       - redis_data:/data         # data survives container restarts
     healthcheck:
@@ -54,5 +54,5 @@ services:
       retries: 5
 
 volumes:
-  mongo_data:   # MongoDB data volume
-  redis_data:   # Redis data volume
+  mongo_data:  
+  redis_data:  
