@@ -44,7 +44,6 @@ const moderationResultSchema = new mongoose.Schema(
   { timestamps: false }
 );
 
-// moderationResultSchema.index({ post_id: 1 });
-// moderationResultSchema.index({ job_id:  1 });
+
 
 module.exports = mongoose.model("ModerationResult", moderationResultSchema);
